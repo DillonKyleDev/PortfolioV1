@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/main.css" type="text/css" rel="stylesheet">
+  <script src="js/script.js" defer></script>
+  <script src="js/contactform.js" defer></script>
+  <script src="js/slideshow.js" defer></script>
+  <title>Dillon Kyle Web Developer</title>
+</head>
+
+
+<body>
+
+  <div id="backdrop"></div>
+
+  <div id="slideshowWindow">
+    <div id="slideshowBox">
+      <button class="sliderButton" id="leftButton" data-direction='left'="">&lt</button>
+      <div id="imageSpot"></div>
+      <button class="sliderButton" id="rightButton" data-direction='right'>&gt</button>
+    </div>
+  </div>
+
+  <div id="container">
+    <div id="top"></div>
+    <nav>
+    <a href="#top" alt="scroll to top" id="DK">
+      <h1>D<span class="splash">K</span></h1>
+    </a>
+      <div id="buttonFlex">
+        <div class="button">
+        <h1>
+          <a href="#Projects" alt="Projects">PROJECT<span class="splash">S</span></a>
+        </h1>
+        </div>
+        <div class="button">
+          <h1>
+          <a href="#contact" alt="Contact">CONTAC<span class="splash">T</span></a>
+        </h1>
+        </div>
+      </div>
+      
+    </nav>
+    
+    <img src="/images/icons/astronaut.png" id="astronaut" onclick="rotateAstro3()">
+
+    <div id="hero">
+      <div id="heroChild">
+        <p id="gotcha1">
+          Looking for a <span class='splash'>p</span>assionate 
+        </p>
+        <p id="gotcha2">
+          <span class="splash">W</span>eb Develo<span class="splash">p</span>er?
+        </p>
+      </div><!--id=heroChild-->
+    </div><!--id=hero-->
+
+    <div id="intro">
+
+        <h1 id='hi'>Hi, I'm Dillon</h1>
+        <p class="pMargin"><span id="impact">I am</span> obsessed with writing code and have a desire to learn like no other.  
+          I first fell in love with C++, then I moved on to Javascript and into the world of web development.  Take a look at some of my work so far<span id="projects">!</span>
+        </p> 
+        
+        <h1 class="sectionName" id="Projects">PROJECT<span class="splash">S</span></h1>
+
+        <div id="cardContainer">
+
+          <div class="card">
+            <div class="cardImage">
+              <img src="/images/Websites/square/small/issSquare1Sm2.png" class="slideInit" data-init="iss">
+            </div>
+
+            <div class="cardInfo">
+              <h2 class="projectName">ISS Travel Guide</h2>
+              <p class="cardP">
+                A React-based travel guide that uses a map API, reverse-geocoding API, and an API that tracks the International Space Station coordinates in order to plot and display locations "visited by" the ISS.  Completely custom-written CSS.
+              </p>
+              <div class="linkDiv">
+                <span>
+                  <a href='' class="link">Live Site</a>
+                </span>
+                <span>
+                  <a href='https://github.com/DillonKyleDev/ISS-Travel-Guide' alt='iss travel guide github repo link' class="link">See Code</a>
+                </span>
+              </div>
+              <ul class="tags">
+                Tags:
+                <li>React</li>
+                <li>Javascript</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>TomTom API</li>
+                <li>Leaflet API</li>
+                <li>WheretheISS.at API</li>
+                <li>Responsive</li>
+              </ul>
+            </div>
+          </div><!--id=card-->
+          <div class="card">
+            <div class="cardImage">
+              <img src='/images/Websites/square/small/coffeeSquareSm3.png' class="slideInit" data-init='coffee'>
+            </div>
+
+            <div class="cardInfo">
+              <h2 class="projectName">Our House Coffee</h2>
+              <p class="cardP">
+                A coffee store front that includes a cart system written in vanilla Javascript that lets you add and remove items, as well as change quantity from within the cart. Completely custom-written CSS.
+              </p>
+              <div class="linkDiv">
+                <span>
+                  <a href='' class="link">Live Site</a>
+                </span>
+                <span>
+                  <a href='https://github.com/DillonKyleDev/Coffee-Store-Front' alt='coffee store front github repo link' class="link">See Code</a>
+                </span>
+              </div>
+              <ul class="tags">
+                Tags:
+                <li>Javascript</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Responsive</li>
+              </ul>
+                
+            </div>
+          </div><!--id=card-->
+
+        </div><!--id=cardContainer-->
+            
+    </div><!--id=intro-->
+    
+
+    <div id="contactParent">
+      <div id="contact">
+        <form id="contactForm">
+          <label id="contactMe">Contact Me</label>
+            <input placeholder="Your Name" id="personName" class="input"> 
+            <input placeholder="Your Email" id="email" class="input">
+            <input placeholder="Subject Line" id="subject" class="input">
+            <textarea placeholder="Message" id="message" class="input"></textarea>
+          <button type="submit">Send Email</button>
+        </form>
+      </div>
+    </div>
+
+    <footer id="footer">
+      <p>
+        Background Photo by <a href="https://unsplash.com/@gferla?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Guillermo Ferla</a> on <a href="https://unsplash.com/images/nature/outer-space?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> / Astronaut made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> on <a href="https://www.flaticon.com/" title="Flaticon">flaticon</a>
+      </p>
+    </footer>
+
+  </div><!--id=container-->
+
+</body>
+</html>

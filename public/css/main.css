@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500&display=swap');
+html, body {
+  scroll-behavior: smooth;
+  min-width: 100%;
+  font-weight: 500;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+body {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(20, 20, 20);
+  font-family: 'Archivo Narrow', sans-serif;
+  background-image: url('../images/outerspaceMedium.jpg');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-attachment: fixed;
+}
+
+
+/*Styles for the slideshow overlay*/
+#backdrop {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0,0,0,.7);
+  transition: visibility .4s 0s, opacity .4s;
+}
+#slideshowWindow {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#slideshowBox {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 5vh;
+  left: 5vw;
+  width: 0;
+  height: 90vh;
+  background-color: rgb(255,255,255, .9);
+  border-radius: 2px;
+  transition: visibility .4s 0s, opacity .4s, width .4s .4s;
+  display: grid;
+  grid-template-columns: 5% 90% 5%;
+  overflow: hidden;
+}
+#imageSpot {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+#imageSpot img {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  box-shadow: 1px 2px 10px 1px rgb(59, 59, 59);
+}
+.sliderButton {
+  visibility: hidden;
+  opacity: 0;
+  font-size: 3rem;
+  border: none;
+  padding: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  transition: visibility .4s, opacity .4s .4s;
+  cursor: pointer;
+  background-color: rgb(0,0,0,.0);
+}
+
+h1 {
+  font-weight: 500;
+}
+
+#container {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+}
+
+#astronaut {
+  width: 50px;
+  position: fixed;
+  cursor: pointer;
+  transition: visibility .4s 0s, opacity .4s, transform 20s;
+}
+
+nav {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: rgb(0,0,0,.9);
+  padding: 0;
+  color: white;
+}
+
+#DK:hover {
+  background-color: rgb(70, 70, 70);
+  height: 80%;
+}
+
+nav h1 {
+  margin: 10px;
+}
+
+#buttonFlex {
+  height: 52px;
+}
+
+.button {
+  display: inline-block;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  height: 100%;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(70, 70, 70);
+}
+
+#hero {
+  width: 100%;
+  height: 100%;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#heroChild {
+  background-color: rgb(0,0,0, .65);
+  border-radius: 5px;
+  box-shadow: 2px 3px 3px 2px rgb(0,0,0, .2);
+}
+
+.splash {
+  color: rgb(255, 104, 58);
+}
+
+#gotcha1 {
+  font-size: 4rem;
+  margin: 0;
+  margin: 60px;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+#gotcha2 {
+  text-transform: uppercase;
+  font-size: 4rem;
+  margin: 60px;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+#buffer {
+  height: 60px;
+  width: 100%;
+  background-color: rgb(0,0,0,.7);
+}
+
+#intro {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  padding: 100px 0px 100px 0px;
+  background-color: rgb(46, 46, 46, .8);
+  box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, .5);
+  color: rgb(255, 255, 255);
+}
+
+#hi{
+  margin: 0;
+  padding: 50px;
+  font-size: 4rem;
+  text-decoration: underline;
+  text-decoration-color:rgb(255, 104, 58);
+}
+
+.pMargin {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 150px;
+  font-size: 1.5rem;
+  min-width: 25%;
+  max-width: 75%;
+  line-height: 1.6;
+}
+
+#impact {
+  line-height: 0;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: rgb(255, 104, 58);
+}
+
+#cardContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 80%;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  column-gap: 5%;
+  row-gap: 5%;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+.card img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  cursor: pointer;
+  box-shadow: 0px 3px 10px 3px rgb(0, 0, 0);
+  border: 2px solid white;
+}
+.card img:hover {
+  border: solid 2px rgb(255, 104, 58);
+  padding: 0;
+}
+.cardInfo {
+  margin-top: 10px;
+  max-width: 450px;
+  height: 300px;
+}
+.cardP {
+  margin: 5px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+}
+.projectName {
+  margin-top: 0;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+.linkDiv {
+  margin: 20px 0;
+}
+.link {
+  color: rgb(255, 104, 58);
+  border-radius: 15px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 10px;
+  margin: 0 5px;
+  transition-property: underline;
+  transition-duration: .2s;
+  cursor: pointer;
+}
+.link:hover {
+  text-decoration: underline;
+}
+.tags {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.tags li {
+  padding: 0 10px;
+  margin: 5px 5px;
+  border: solid white 1px;
+  background-color: rgb(0, 0, 0, .5);
+  border-radius: 2px;
+}
+
+.sectionName {
+  color: white;
+  text-decoration: underline;
+  text-decoration-color:rgb(255, 104, 58);
+  padding-top: 25px;
+  margin-top: 25px;
+  border-top: solid white 2px;
+  margin-left: 9%;
+  margin-right: 9%;
+}
+
+#contactParent {
+  margin: 100px 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(46, 46, 46, .8);
+  padding: 40px 0;
+}
+#contact {
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10%;
+  padding-right: 10%;
+  min-width: 200px;
+  max-width: 400px;
+}
+#contactMe {
+  display: inline-block;
+  font-size: 1.3rem;
+  min-width: 200px;
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+}
+#contact form {
+  text-align: center;
+}
+#contact form .input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+  width: 95%;
+  min-width: 180px;
+  max-width: 450px;
+  font-family: sans-serif;
+  font-size: .95rem;
+}
+#contact form button {
+  margin: 10px 0;
+  padding: 10px;
+  min-width: 210px;
+  max-width: 450px;
+  border-radius: 2px;
+  background-color: rgb(0,0,0,0);
+  border: rgb(255, 104, 58) solid 1px;
+  color: rgb(255, 104, 58);
+  font-family: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition-property: background-color, color, border;
+  transition-duration: .1s;
+}
+#contact form button:hover {
+  background-color: rgb(0, 0, 0, .5);
+  color: white;
+}
+#message {
+  height: 150px;
+  resize: none;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0,0,0, .5);
+  height: 50px;
+  width: 100%;
+  color: rgb(172, 172, 172);
+}
+
+footer p {
+  font-size: .7rem;
+  margin: 0;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 1100px) {
+  #cardContainer {
+    flex-wrap: wrap;
+    width: 90%;
+    margin-bottom: 0;
+  }
+  .cardInfo {
+    height: auto;
+    margin-bottom: 75px;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  body {
+    background-image: url('../images/outerspaceSmall.jpg');
+    background-size: cover;
+  }
+}
+@media only screen and (max-width: 480px) {  
+  #heroChild p {
+    font-size: 3rem;
+  }
+
+  #heroChild {
+    background-color: rgb(46, 46, 46, .8);
+    width: 100%;
+    border-radius: 0;
+    margin: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  p .splash {
+    color: rgb(255, 104, 58);
+  }
+
+  #gotcha1 {
+    text-align: left;
+    border-left: solid 2px rgb(255, 104, 58);
+    padding-left: 10px;
+    margin: 20px;
+    margin-right: 5px;
+    margin-top: 40px;
+  }
+  #gotcha2 {
+    text-align: right;
+    border-right: solid 2px white;
+    padding-right: 10px;
+    margin: 20px;
+    margin-left: 5px;
+    margin-bottom: 40px;
+  }
+
+  #intro {
+    padding-top: 40px;
+  }
+
+  #intro #hi {
+    font-size: 3rem;
+    padding: 0;
+    padding-bottom: 40px;
+  }
+
+  #intro h1 {
+    margin-top: 30px;  
+  }
+  .sectionName {
+    margin-top: 30px;
+    margin-left: 9%;
+    margin-right: 9%;
+    padding-top: 30px;
+    border-top: solid white 2px;
+  }
+
+  .pMargin {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    max-width: none;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+
+  #impact {
+    font-size: 32px;
+  }
+
+  #html {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  #css {
+    padding: 0;
+  }
+
+  #js {
+    padding: 0;
+  }
+
+  footer {
+    background-color: rgb(0,0,0, .7);
+    height: 100px;
+    text-align: center;
+  }
+
+  footer p {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

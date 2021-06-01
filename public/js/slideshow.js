@@ -85,8 +85,12 @@ function arrowClick(direction) {
   image.textContent = '';
   image.append(imageArray[index]);
   image.firstChild.style.cssText = 'visibility: visible;  opacity: 100;  width: 100%;  height: auto;';
-  if(index > 1) {
-    image.firstChild.style.cssText = 'visibility: visible;  opacity: 100; height: 100%; width: auto; margin: auto; transition: height .4s .4s;';
+  if(issIndex > 1) {
+    if(screen.width < 520) {
+      image.firstChild.style.cssText = 'height: auto; width: 100%;';
+    } else {
+      image.firstChild.style.cssText = 'height: 100%; width: auto;';
+    }
   }
   //reasign temp values to actual values for correctness
   if(tempInit === 'iss') {
@@ -105,12 +109,20 @@ function slideshowDisplay() {
   image.style.cssText = 'opacity: 100; visibility: visible; width: 100%; height: 100%;';
   if(tempInit === 'iss') {
     if(issIndex > 1) {
-      image.firstChild.style.cssText = 'height: 100%; width: auto;';
+      if(screen.width < 520) {
+        image.firstChild.style.cssText = 'height: auto; width: 100%;';
+      } else {
+        image.firstChild.style.cssText = 'height: 100%; width: auto;';
+      }
     }
   }
   if(tempInit === 'coffee') {
     if(coffeeIndex > 1) {
-      image.firstChild.style.cssText = 'height: 100%; width: auto;';
+      if(screen.width < 520) {
+        image.firstChild.style.cssText = 'height: auto; width: 100%;';
+      } else {
+        image.firstChild.style.cssText = 'height: 100%; width: auto;';
+      }
     }
   }
   arrows.forEach(element => {

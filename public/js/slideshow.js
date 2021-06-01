@@ -84,13 +84,14 @@ function arrowClick(direction) {
   
   image.textContent = '';
   image.append(imageArray[index]);
-  image.firstChild.style.cssText = 'visibility: visible;  opacity: 100;  width: 100%;  height: auto;';
-  if(issIndex > 1) {
+  if(index > 1) {
     if(screen.width < 520) {
       image.firstChild.style.cssText = 'height: auto; width: 100%;';
     } else {
       image.firstChild.style.cssText = 'height: 100%; width: auto;';
     }
+  } else {
+    image.firstChild.style.cssText = 'visibility: visible;  opacity: 100;  width: 100%;  height: auto;';
   }
   //reasign temp values to actual values for correctness
   if(tempInit === 'iss') {

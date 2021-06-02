@@ -16,7 +16,6 @@ body {
   background-repeat: no-repeat;
   background-position: 50%;
   background-attachment: fixed;
-
 }
 
 /*Styles for the slideshow overlay*/
@@ -419,7 +418,6 @@ footer a {
   body {
     background-image: url('../images/outerspaceSmall.jpg');
     background-size: cover;
-    height: 100vh;
   }
 }
 @media only screen and (max-width: 480px) {  

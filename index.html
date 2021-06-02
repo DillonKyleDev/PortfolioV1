@@ -38,7 +38,7 @@
         </div>
         <div class="button">
           <h1>
-          <a href="#contact" alt="Contact">CONTAC<span class="splash">T</span></a>
+          <a href="#contactLink" alt="Contact">CONTAC<span class="splash">T</span></a>
         </h1>
         </div>
       </div>
@@ -64,9 +64,9 @@
         <p class="pMargin"><span id="impact">I am</span> obsessed with writing code and have a desire to learn like no other.  
           I first fell in love with C++, then I moved on to Javascript and into the world of web development.  Take a look at some of my work so far<span id="projects">!</span>
         </p> 
-        
-        <h1 class="sectionName" id="Projects">PROJECT<span class="splash">S</span></h1>
-
+        <div id="Projects">
+          <h1 class="sectionName">PROJECT<span class="splash">S</span></h1>
+        </div>
         <div id="cardContainer">
 
           <div class="card">
@@ -128,12 +128,10 @@
                 
             </div>
           </div><!--id=card-->
-
         </div><!--id=cardContainer-->
-            
     </div><!--id=intro-->
     
-
+    <div id="contactLink">
     <div id="contactParent">
       <div id="contact">
         <form id="contactForm">
@@ -143,11 +141,12 @@
             <input placeholder="Subject Line" id="subject" class="input">
             <textarea placeholder="Message" id="message" class="input"></textarea>
           <button type="submit">Send Email</button>
-        </form>
-      </div>
-    </div>
+        </form><!--id=contactForm-->
+      </div><!--id=contact-->
+    </div><!--id=contactParent-->
+    </div><!--id=contactLink-->
 
-    <footer id="footer">
+    <footer>
       <p>
         Background Photo by 
         <a href="https://unsplash.com/@gferla?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">

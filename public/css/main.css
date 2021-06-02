@@ -211,12 +211,18 @@ a {
   text-decoration-color: rgb(255, 104, 58);
 }
 
+#Projects {
+  display: block;
+  padding-top: 60px;
+  margin-top: 60px;
+}
+
 #cardContainer {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   width: 80%;
-  margin-top: 100px;
+  margin-top: 80px;
   margin-bottom: 150px;
   margin-left: auto;
   margin-right: auto;
@@ -305,9 +311,13 @@ a {
   margin-left: 9%;
   margin-right: 9%;
 }
-
+#contactLink {
+  display: block;
+  padding-top: 100px;
+  margin-top: 100px;
+}
 #contactParent {
-  margin: 100px 0;
+  margin-bottom: 100px;
   width: 100%;
   text-align: center;
   background-color: rgb(46, 46, 46, .8);

@@ -339,10 +339,10 @@ a {
   padding-bottom: 10px;
   letter-spacing: 1px;
 }
-#contact form {
+#contactContainer form {
   text-align: center;
 }
-#contact form .input {
+#contactContainer form .input {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -358,7 +358,7 @@ a {
   font-family: sans-serif;
   font-size: .95rem;
 }
-#contact form button {
+#contactContainer form button {
   margin: 10px 0;
   padding: 10px;
   min-width: 210px;
@@ -373,7 +373,7 @@ a {
   transition-property: background-color, color, border;
   transition-duration: .1s;
 }
-#contact form button:hover {
+#contactContainer form button:hover {
   background-color: rgb(0, 0, 0, .5);
   color: white;
 }

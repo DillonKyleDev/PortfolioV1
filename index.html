@@ -5,11 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/main.css" type="text/css" rel="stylesheet">
-  <script src="js/astronaut.js" defer></script>
   <script src="js/contactform.js" defer></script>
   <script src="js/slideshow.js" defer></script>
   <title>Dillon Kyle | Web Developer</title>
-  <link rel="icon" href="astronaut.ico" type="image/x-icon" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 
 
@@ -46,7 +45,7 @@
       
     </nav>
     
-    <img src="/images/icons/astronaut.png" id="astronaut" onclick="rotateAstro3()">
+    <img src='images/icons/astronaut.png' id="astronaut" onclick="rotateAstro3()">
 
     <div id="hero">
       <div id="heroChild">
@@ -163,3 +162,82 @@
 
 </body>
 </html>
+
+
+
+
+<script>
+
+window.onbeforeunload = () => {
+  window.scrollTo(0, 0);
+}
+
+let astronaut = document.getElementById('astronaut');
+//variables for astronaut
+let xPos = 0;
+let yPos = 52;
+let goPosX = true;
+let goPosY = true;
+
+//sets rotation for astronaut
+let rotateAstro1 = function() {
+  astronaut.style.transform = 'rotate(1440deg)';
+}
+let rotateAstro2 = function() {
+  astronaut.style.transform = 'rotate(-960deg)';
+}
+let rotateAstro3 = function() {
+  astronaut.style.transform = 'rotate(5000deg)';
+}
+
+let moveAstronaut = function() {
+  //assess if astronaut should move positively or negatively
+  if(xPos == 0) {
+    goPosX = true;
+    rotateAstro1();
+  }
+  if(xPos == window.innerWidth - 65) {
+    goPosX = false;
+    rotateAstro2();
+  }
+  //accounts for the fixed nav bar
+  if(yPos == 52) {
+    goPosY = true;
+    rotateAstro1();
+  }
+  if(yPos == window.innerHeight - 50) {
+    goPosY = false;
+    rotateAstro2();
+  }
+  //keeps astronaut within the window
+  if((yPos > window.innerHeight) || (yPos < 52)) {
+    yPos = 52;
+    goPosY = true;
+  }
+  if((xPos > window.innerWidth) || (xPos < 0)) {
+    xPos = 0;
+    goPosX = true;
+  }
+
+  //increments the astronauts position based on above checks
+  if(goPosX) {
+    xPos+=.5;
+  }
+  if(!goPosX) {
+    xPos-=.5;
+  }
+  if(goPosY) {
+    yPos+=.5;
+  }
+  if(!goPosY) {
+    yPos-=.5;
+  }
+  //sets positions
+  astronaut.style.left = xPos + 'px';
+  astronaut.style.top = yPos + 'px';
+  setTimeout(moveAstronaut, 10);
+}
+
+moveAstronaut();
+
+</script>

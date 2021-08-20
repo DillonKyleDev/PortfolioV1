@@ -14,28 +14,24 @@ contactForm.addEventListener('submit', e => {
     message: message.value
   }
 
-  async function postData() {
-    const response = await fetch('/', {
+  function postData() {
+    fetch('/', {
       method: 'POST',
-      headers: new Headers({
+      headers: {
         'Content-type': 'application/json',
-        'Accept': 'application/json'
-      }),
+      },
       body: JSON.stringify(formData),
     })
-    .then(data => data.json());
-    console.log(response);
-    return response;
+    .then(data => {
+      console.log(data);
+      alert('Message sent successfully!');
+    })
+    .catch(err => {
+      alert(`Message did not send: ${err}`);
+    })
   }
 
-  postData()
-  .then(() => {
-    alert('Message sent successfully!');
-  })
-  .catch(() => {
-    alert('Message sent successfully!');
-  })
- 
+  postData();
 
   personName.value = '';
   email.value = '';

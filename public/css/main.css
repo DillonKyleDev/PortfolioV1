@@ -12,10 +12,11 @@ body {
   margin: 0;
   background-color: rgb(20, 20, 20);
   font-family: 'Archivo Narrow', sans-serif;
-  background-image: url('../images/outerspaceMedium.jpg');
+  background-image: url('../images/outerspace.jpg');
   background-repeat: no-repeat;
   background-position: 50%;
   background-attachment: fixed;
+  background-size: 100%;
 }
 
 /*Styles for the slideshow overlay*/
@@ -416,7 +417,7 @@ footer a {
 
 @media only screen and (max-device-width: 480px) {
   body {
-    background-image: url('../images/outerspaceSmall.jpg');
+    background-image: url('../images/outerspaceSmall2.jpg');
     background-size: cover;
   }
 }

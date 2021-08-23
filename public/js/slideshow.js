@@ -7,10 +7,17 @@ const arrows = document.querySelectorAll('.sliderButton');
 let isDisplayed = false;
 
 let tempInit = '';
+let ticketHoundIndex = 0;
 let issIndex = 0;
 let coffeeIndex = 0;
 
 //image arrays for slideshow
+let ticketHoundImages = [];
+for(let i = 1; i < 5; i++) {
+  let tempNode = document.createElement('img');
+  tempNode.src = `/images/Websites/tickethound${i}.png`;
+  ticketHoundImages.push(tempNode);
+}
 let issImages = [];
 for(let i = 1; i < 5; i++) {
   let tempNode = document.createElement('img');
@@ -43,6 +50,10 @@ function openSlideshow(init) {
   if(!isDisplayed) {
     tempInit = init;
     switch(init) {
+      case 'ticketHound':
+        image.append(ticketHoundImages[ticketHoundIndex]);
+        slideshowDisplay();
+        break;
       case 'iss':
         image.append(issImages[issIndex]);
         slideshowDisplay();
@@ -64,12 +75,15 @@ function arrowClick(direction) {
   let index = 0;
   let imageArray;
   
-  if(tempInit === 'iss') {
-    imageArray = issImages;
-    index = issIndex;
+  if(tempInit === 'ticketHound') {
+    imageArray = ticketHoundImages;
+    index = ticketHoundIndex;
   } else if(tempInit === 'coffee') {
     imageArray = coffeeImages;
     index = coffeeIndex;
+  } else if(tempInit === 'iss') {
+    imageArray = issImages;
+    index = issIndex;
   };
   
   if(direction === 'right') {
@@ -84,7 +98,7 @@ function arrowClick(direction) {
   
   image.textContent = '';
   image.append(imageArray[index]);
-  if(index > 1) {
+  if((index > 1) && (tempInit !== 'ticketHound')) {
     if(screen.width < 520) {
       image.firstChild.style.cssText = 'height: auto; width: 100%;';
     } else {
@@ -93,13 +107,17 @@ function arrowClick(direction) {
   } else {
     image.firstChild.style.cssText = 'visibility: visible;  opacity: 100;  width: 100%;  height: auto;';
   }
+
   //reasign temp values to actual values for correctness
-  if(tempInit === 'iss') {
-    issImages = imageArray;
-    issIndex = index;
+  if(tempInit === 'ticketHound') {
+    ticketHoundImages = imageArray;
+    ticketHoundIndex = index;
   } else if(tempInit === 'coffee') {
     coffeeImages = imageArray;
     coffeeIndex = index;
+  } else if(tempInit === 'iss') {
+    issImages = imageArray;
+    issIndex = index;
   }
 }
 
@@ -108,8 +126,8 @@ function slideshowDisplay() {
   backdrop.style.cssText = 'opacity: 100; visibility: visible;';
   slideshowBox.style.cssText = 'opacity: 100; visibility: visible; width: 90vw; transition: width .4s .4s';
   image.style.cssText = 'opacity: 100; visibility: visible; width: 100%; height: 100%;';
-  if(tempInit === 'iss') {
-    if(issIndex > 1) {
+  if(tempInit === 'coffee') {
+    if(coffeeIndex > 1) {
       if(screen.width < 520) {
         image.firstChild.style.cssText = 'height: auto; width: 100%;';
       } else {
@@ -117,8 +135,8 @@ function slideshowDisplay() {
       }
     }
   }
-  if(tempInit === 'coffee') {
-    if(coffeeIndex > 1) {
+  if(tempInit === 'iss') {
+    if(issIndex > 1) {
       if(screen.width < 520) {
         image.firstChild.style.cssText = 'height: auto; width: 100%;';
       } else {
@@ -137,13 +155,18 @@ function slideshowHide() {
   backdrop.style.cssText = 'opacity: 0; visibility: hidden;';
   slideshowBox.style.cssText = 'opacity: 0; visibility: hidden; width: 0; transition: width 0s 0s';
   image.style.cssText = 'opacity: 0; visibility: hidden; width: 0;';
-  if(tempInit === 'iss') {
-    if(issIndex > 1) {
+  if(tempInit === 'ticketHound') {
+    if(ticketHoundIndex > 1) {
       image.style.cssText = 'width: 0;'
     }
   }
   if(tempInit === 'coffee') {
     if(coffeeIndex > 1) {
+      image.style.cssText = 'width: 0;'
+    }
+  }
+  if(tempInit === 'iss') {
+    if(issIndex > 1) {
       image.style.cssText = 'width: 0;'
     }
   }

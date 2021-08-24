@@ -7,10 +7,14 @@ array1.innerHTML = '';
 array2.innerHTML = '';
 
 array1Split.forEach(letter => {
-  array1.innerHTML += "<span>" + letter + "</span>";
+  array1.innerHTML += "<span class='effectLetterTop'>" + letter + "</span>";
 });
 array2Split.forEach(letter => {
-  array2.innerHTML += "<span>" + letter + "</span>";
+  if(letter === '?') {
+    array2.innerHTML += "<span class='questionMark'>" + letter + "</span>";
+  } else {
+    array2.innerHTML += "<span class='effectLetterBottom'>" + letter + "</span>";
+  }
 });
 
 let counter1 = 0;
@@ -28,9 +32,9 @@ function setSplash() {
   })
   const span2 = array2.querySelectorAll('span');
   span2.forEach(span => {
-    if((span.innerHTML === 'p') || (span.innerHTML === 'W')) {
+    if((span.innerHTML === 'p') || (span.innerHTML === 'W') || (span.innerHTML === '?')) {
       span.classList.add('splash');
-    }
+    } 
   })
 }
 setSplash();
@@ -45,9 +49,13 @@ function addEffect() {
   } else {
     firstDone = true;
   }
+
   const span2 = array2.querySelectorAll('span')[counter2];
-  if(span2.textContent !== ' ') {
+  if((span2.textContent !== ' ') && (span2.textContent !== '?')) {
     span2.classList.add('fade');
+  } else if(span2.textContent === '?') {
+    span2.classList.add('questionMarkAnimate');
+    span2.id = ('questionMarkBounce');
   }
   if(counter2 <= (array2Split.length - 2)) {
     counter2++;

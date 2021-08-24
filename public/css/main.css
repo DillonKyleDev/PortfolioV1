@@ -170,10 +170,15 @@ a {
   word-wrap: break-word;
   hyphens: auto;
 }
-#gotcha1 span {
+.effectLetterTop {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity .5s ease, transform .3s ease;
+}
+.effectLetterBottom {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity .5s ease, transform .5s ease;
 }
 #gotcha2 {
   text-transform: uppercase;
@@ -182,10 +187,19 @@ a {
   word-wrap: break-word;
   hyphens: auto;
 }
-#gotcha2 span {
+.questionMark {
+  display: inline-block;
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity .5s ease, transform .5s ease;
+  transform: translateY(-50px);
+  transition: opacity .5s ease, transform .2s .3s ease-in;
+}
+.questionMarkAnimate {
+  opacity: 1 !important;
+  transform: translateY(0px);
+}
+.questionMarkAnimate #questionMarkBounce {
+  transition: transform .2s ease-in !important;
+  transform: translateY(0px) !important;
 }
 .fade {
   opacity: 1 !important;

@@ -173,12 +173,12 @@ a {
 .effectLetterTop {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity .5s ease, transform .3s ease;
+  transition: opacity .5s ease, transform .3s;
 }
 .effectLetterBottom {
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity .5s ease, transform .5s ease;
+  transition: opacity .5s ease, transform .5s;
 }
 #gotcha2 {
   text-transform: uppercase;
@@ -203,8 +203,18 @@ a {
 }
 .fade {
   opacity: 1 !important;
-  transform: translateY(0px) !important;
+  transform: translateY(0px);
   display: inline-block;
+}
+.fade:hover {
+  transition: transform .3s ease;
+  transform: translateY(-10px);
+  cursor: default;
+}
+.questionMark:hover {
+  transition: transform .3s ease;
+  transform: translateY(-10px);
+  cursor: default;
 }
 
 #buffer {

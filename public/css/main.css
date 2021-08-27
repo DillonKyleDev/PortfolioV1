@@ -438,6 +438,26 @@ a {
   height: 150px;
   resize: none;
 }
+#popup {
+  display: none;
+  opacity: 0;
+  transition: opacity .2s ease;
+  border: solid white 2px;
+  border-radius: 2px;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+}
+#popup p {
+  margin: 0;
+  padding: 10px;
+  letter-spacing: 1px;
+}
+.popupAppear {
+  display: block !important;
+  opacity: 1 !important;
+}
 footer {
   display: flex;
   justify-content: center;
@@ -454,9 +474,8 @@ footer p {
 }
 
 footer a {
-  color: white;
+  color: inherit;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 @media only screen and (max-width: 1100px) {

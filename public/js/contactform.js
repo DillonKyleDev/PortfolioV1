@@ -24,11 +24,11 @@ contactForm.addEventListener('submit', e => {
     })
     .then(data => {
       console.log(data);
-      alert('Message sent successfully!');
     })
     .catch(err => {
-      alert(`Message did not send: ${err}`);
+      console.log(err);
     })
+    document.getElementById('popup').classList.add('popupAppear');
   }
 
   postData();

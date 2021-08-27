@@ -72,7 +72,25 @@ function addEffect() {
 function complete(timer) {
   clearInterval(timer);
   timer = null;
+
+  //Code for hover animation on each letter
+  let letters = document.querySelectorAll('.fade');
+  letters.forEach(letter => {
+    letter.addEventListener('mouseover', (e) => hoverLetter(e));
+  })
+  
+  function hoverLetter(e) {
+    e.target.classList.add('hoverLetter');
+    setTimeout(() => resetLetter(e), 300);
+
+    function resetLetter(e) {
+      e.target.classList.remove('hoverLetter');
+    }
+  }
 }
+
+
+
 
 
 //Code for Projects section animations

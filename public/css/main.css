@@ -174,11 +174,13 @@ a {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity .5s ease, transform .3s;
+  cursor: default;
 }
 .effectLetterBottom {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity .5s ease, transform .5s;
+  cursor: default;
 }
 #gotcha2 {
   text-transform: uppercase;
@@ -192,6 +194,7 @@ a {
   opacity: 0;
   transform: translateY(-50px);
   transition: opacity .5s ease, transform .2s .3s ease-in;
+  cursor: default;
 }
 .questionMarkAnimate {
   opacity: 1 !important;
@@ -206,15 +209,13 @@ a {
   transform: translateY(0px);
   display: inline-block;
 }
-.fade:hover {
+.hoverLetter {
   transition: transform .3s ease;
   transform: translateY(-10px);
-  cursor: default;
 }
 .questionMark:hover {
   transition: transform .3s ease;
   transform: translateY(-10px);
-  cursor: default;
 }
 
 #buffer {

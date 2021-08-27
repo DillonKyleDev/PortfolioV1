@@ -18,7 +18,7 @@ app.post('/', (req, res) => {
   const data = {
     from: req.body.email,
     to: 'dillonkyleportfolio@gmail.com',
-    subject: req.body.email,
+    subject: req.body.subject,
     text: req.body.message
   };
   mailgun.messages().send(data, (error, body) => {

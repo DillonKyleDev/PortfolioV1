@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
   const data = {
     from: req.body.email,
-    to: 'dillonkyleportfolio@gmail.com',
+    to: 'dillonkyle95@yahoo.com',
     subject: req.body.subject,
     text: req.body.message
   };

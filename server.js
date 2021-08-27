@@ -1,6 +1,8 @@
 const express= require('express');
 const app = express();
-const nodemailer = require('nodemailer');
+const API_KEY = '2787179e050d585834d374729abeb7ac-fb87af35-3d7cadcf';
+const DOMAIN = 'www.dillonkyleportfolio.com';
+const mailgun = require('mailgun-js')({apiKey: API_KEY, domain: DOMAIN});
 const PORT = process.env.PORT || 5000;
 
 //Middleware
@@ -13,29 +15,19 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 app.post('/', (req, res) => {
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: 'dillonkyleportfolio@gmail.com',
-      pass: 'sdflky5543Ekrke$343'
-    }
-  });
-  const mailOptions = {
-    from: `${req.body.personName}: ${req.body.email}`,
+  const data = {
+    from: req.body.email,
     to: 'dillonkyleportfolio@gmail.com',
-    subject: `Message from ${req.body.email} Subject: ${req.body.subject}`,
+    subject: req.body.email,
     text: req.body.message
-  }
-  transporter.sendMail(mailOptions, (error, info) => {
+  };
+  mailgun.messages().send(data, (error, body) => {
+    console.log(body);
     if(error) {
       console.log(error);
-      res.send('error occured');
-    } else {
-      console.log(`Email sent: ${info.response}`);
-      res.send('success');
     }
-  })
-})
+  });
+});
 app.listen(PORT, () => {
   console.log(`server running on port ${PORT}`);
 })

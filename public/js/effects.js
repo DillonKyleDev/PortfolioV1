@@ -103,7 +103,7 @@ function addAnimation() {
   let i = 0;
 
   function animate() {
-    if(window.pageYOffset >= projects.offsetTop - window.pageYOffset) {
+    if(window.pageYOffset >= projects.offsetTop - window.pageYOffset + 300) {
       cardArray[i].classList.add('fadeCard');
       if(i < 2) {
         i++;

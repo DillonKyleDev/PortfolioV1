@@ -52,34 +52,47 @@ nav {
   background-color: rgb(255,255,255, .9);
   border-radius: 2px;
   transition: visibility .4s 0s, opacity .4s, width .4s .4s;
-  display: grid;
-  grid-template-columns: 5% 90% 5%;
   overflow: hidden;
 }
 #imageSpot {
   height: 100%;
   width: 100%;
   display: flex;
+  margin: auto;
 }
 #imageSpot img {
-  width: 100%;
+  width: 90%;
   height: auto;
   margin: auto;
   box-shadow: 1px 2px 10px 1px rgb(59, 59, 59);
 }
+#arrowOverlay {
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgb(0,0,0,0);
+  position: fixed; 
+  height: 90vh; 
+  width: 90vw; 
+  top: 5vh; 
+  left: 5vw;
+  display: none;
+  justify-content: center;
+  align-content: center;
+  transition: display .4 0s, visibility .4s 0s, opacity .4s;
+}
 .sliderButton {
   visibility: hidden;
   opacity: 0;
-  font-size: 3rem;
   border: none;
   padding: 0;
-  margin: auto;
-  width: 60px;
-  height: 60px;
   transition: visibility .4s, opacity .4s .4s;
   cursor: pointer;
+  margin: auto;
+  padding: 1rem;
   border-radius: 100px;
-  background-color: rgb(0,0,0,.2);
+  height: min-content;
+  width: min-content;
+  background-color: rgb(0,0,0,.6);
 }
 
 h1 {
@@ -151,12 +164,24 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
-
 #heroChild {
   background-color: rgb(0,0,0, .65);
   border-radius: 5px;
   box-shadow: 2px 3px 3px 2px rgb(0,0,0, .2);
+}
+#chevron-div {
+  margin-bottom: -7%;
+  padding-top: 7%;
+  cursor: pointer;
+  transition: transform .4s;
+}
+#leftButton img {
+  transform: rotate(90deg);
+}
+#rightButton img {
+  transform: rotate(-90deg);
 }
 
 .splash {
@@ -167,8 +192,6 @@ a {
   font-size: 4rem;
   margin: 0;
   margin: 60px;
-  word-wrap: break-word;
-  hyphens: auto;
 }
 .effectLetterTop {
   opacity: 0;
@@ -186,7 +209,7 @@ a {
   text-transform: uppercase;
   font-size: 4rem;
   margin: 60px;
-  word-wrap: break-word;
+  word-wrap: none;
   hyphens: auto;
 }
 .questionMark {
@@ -493,59 +516,33 @@ footer a {
 }
 
 @media only screen and (max-device-width: 480px) {
+  #hero {
+    display: none;
+  }
+
   body {
     background-image: url('../images/outerspaceSmall2.jpg');
     background-size: cover;
   }
   .intro {
-    padding-top: 40px !important;
+    padding-top: 120px;
   }
   #hi {
     padding: 0px;
   }
 }
 @media only screen and (max-width: 480px) {  
+  #hero {
+    display: none;
+  }
+
   body {
     background-image: url('../images/outerspaceSmall2.jpg');
     background-size: cover;
   }
 
-  #heroChild p {
-    font-size: 3rem;
-  }
-
-  #heroChild {
-    background-color: rgb(46, 46, 46, .8);
-    width: 100%;
-    border-radius: 0;
-    margin: 10px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-
-  p .splash {
-    color: rgb(255, 104, 58);
-  }
-
-  #gotcha1 {
-    text-align: left;
-    border-left: solid 2px rgb(255, 104, 58);
-    padding-left: 10px;
-    margin: 20px;
-    margin-right: 5px;
-    margin-top: 40px;
-  }
-  #gotcha2 {
-    text-align: right;
-    border-right: solid 2px white;
-    padding-right: 10px;
-    margin: 20px;
-    margin-left: 5px;
-    margin-bottom: 40px;
-  }
-
   .intro {
-    padding-top: 40px !important;
+    padding-top: 120px;
   }
 
   .intro #hi {

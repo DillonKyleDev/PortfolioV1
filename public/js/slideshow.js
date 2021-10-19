@@ -4,6 +4,7 @@ const backdrop = document.getElementById('backdrop');
 const slideshowBox = document.getElementById('slideshowBox');
 const image = document.getElementById('imageSpot');
 const arrows = document.querySelectorAll('.sliderButton');
+const arrowOverlay = document.getElementById('arrowOverlay');
 let isDisplayed = false;
 
 let tempInit = '';
@@ -37,7 +38,7 @@ slideInit.forEach(element => {
   })
 });
 backdrop.addEventListener('click', () => {
-  openSlideshow();
+  slideshowHide();
 });
 arrows.forEach(element => {
   element.addEventListener('click', () => {
@@ -48,6 +49,7 @@ arrows.forEach(element => {
 
 function openSlideshow(init) {
   if(!isDisplayed) {
+    arrowOverlay.style.cssText = "display: flex; visibility: visible; opacity: 100%;";
     tempInit = init;
     switch(init) {
       case 'ticketHound':
@@ -100,12 +102,12 @@ function arrowClick(direction) {
   image.append(imageArray[index]);
   if((index > 1) && (tempInit !== 'ticketHound')) {
     if(screen.width < 520) {
-      image.firstChild.style.cssText = 'height: auto; width: 100%;';
+      image.firstChild.style.cssText = 'height: auto; width: 90%;';
     } else {
       image.firstChild.style.cssText = 'height: 100%; width: auto;';
     }
   } else {
-    image.firstChild.style.cssText = 'visibility: visible;  opacity: 100;  width: 100%;  height: auto;';
+    image.firstChild.style.cssText = 'visibility: visible;  opacity: 100;  width: 90%;  height: auto;';
   }
 
   //reasign temp values to actual values for correctness
@@ -151,10 +153,12 @@ function slideshowDisplay() {
   isDisplayed = true;
 }
 function slideshowHide() {
+  image.textContent = '';
   astronaut2.style.cssText = 'opacity: 100; visibility: visible;';
   backdrop.style.cssText = 'opacity: 0; visibility: hidden;';
   slideshowBox.style.cssText = 'opacity: 0; visibility: hidden; width: 0; transition: width 0s 0s';
   image.style.cssText = 'opacity: 0; visibility: hidden; width: 0;';
+  arrowOverlay.style.display = 'none';
   if(tempInit === 'ticketHound') {
     if(ticketHoundIndex > 1) {
       image.style.cssText = 'width: 0;'

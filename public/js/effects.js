@@ -90,7 +90,24 @@ function complete(timer) {
 }
 
 
+//Down chevron bounce animation
+const chevron = document.getElementById('chevron-div');
+function chevronUp() {
+  chevron.style.transform = 'translateY(-20px)';
+}
+function chevronDown() {
+  chevron.style.transform = 'translateY(0px)';
+}
 
+function oneCycle() {
+  chevronUp();
+  setTimeout(chevronDown, 400);
+}
+function bounceChevron() {
+  setTimeout(oneCycle, 1500);
+}
+bounceChevron();
+setInterval(bounceChevron, 1900);
 
 
 //Code for Projects section animations

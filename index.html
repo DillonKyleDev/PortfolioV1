@@ -19,9 +19,13 @@
 
   <div id="slideshowWindow">
     <div id="slideshowBox">
-      <button class="sliderButton" id="leftButton" data-direction='left'="">&lt</button>
+      
       <div id="imageSpot"></div>
-      <button class="sliderButton" id="rightButton" data-direction='right'>&gt</button>
+      
+    </div>
+    <div id="arrowOverlay">
+      <button class="sliderButton" id="leftButton" data-direction='left'><img src="images/icons/down-chevron.png"></button>
+      <button class="sliderButton" id="rightButton" data-direction='right'><img src="images/icons/down-chevron.png"></button>
     </div>
   </div>
 
@@ -53,13 +57,13 @@
         <p id="gotcha1">Looking for a passionate</p>
         <p id="gotcha2"> Web Developer? </p>
       </div><!--id=heroChild-->
+      <div id="chevron-div" class="chevron-up"><a href="#Introduction"><img src="images/icons/down-chevron.png"></a></div>
     </div><!--id=hero-->
 
     <div class="intro" id="Introduction">
 
         <h1 id='hi'>Hi, I'm Dillon</h1>
-        <p class="pMargin"><span id="impact">My</span> passion is writing code.  The hardest problems are the most fun to solve and there's no feeling quite like learning something new and putting that knowledge to work.
-          I discovered my love of coding when I first learned C++, then I set my sights on Javascript and plunged into the exciting world of web development.  Take a look at some of my work so far<span id="projects">...</span>
+        <p class="pMargin"><span id="impact">My</span> passion is writing code.  The hardest problems are the most fun to solve and there's no feeling quite like learning something new and putting that knowledge into practice.  Take a look at some of my work so far<span id="projects">...</span>
         </p> 
         <div id="Projects">
           <h1 class="sectionName">PROJECT<span class="splash">S</span></h1>
@@ -182,11 +186,7 @@
 
     <footer>
       <p>
-        Background Photo by 
-        <a href="https://unsplash.com/@gferla?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">
-          Guillermo Ferla</a>
-         / Astronaut by 
-        <a href="https://www.freepik.com" title="Freepik" target="_blank">Freepik</a>
+        Portfolio by Dillon Kyle 2021
       </p>
     </footer>
 
@@ -195,11 +195,7 @@
 </body>
 </html>
 
-
-
-
 <script>
-
 window.onbeforeunload = () => {
   window.scrollTo(0, 0);
 }

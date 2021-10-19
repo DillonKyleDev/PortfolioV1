@@ -181,6 +181,11 @@ function slideshowHide() {
   isDisplayed = false;
 }
 
+document.addEventListener('keyup', e => {
+  if(e.key === "Escape") {
+    slideshowHide();
+  }
+})
 
 //logic to prevent scrolling while slideshow is open
 function preventDefault(e) {

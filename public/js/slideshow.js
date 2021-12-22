@@ -26,7 +26,7 @@ for(let i = 1; i < 5; i++) {
   issImages.push(tempNode);
 }
 let coffeeImages = [];
-for(let i = 1; i < 5; i++) {
+for(let i = 1; i < 8; i++) {
   let tempNode = document.createElement('img');
   tempNode.src = `/images/Websites/coffee${i}.png`;
   coffeeImages.push(tempNode);
@@ -73,7 +73,6 @@ function openSlideshow(init) {
 }
 
 function arrowClick(direction) {
-  //Here I decided to use temp values to remove an ugly nesting switch statement
   let index = 0;
   let imageArray;
   
@@ -89,13 +88,20 @@ function arrowClick(direction) {
   };
   
   if(direction === 'right') {
-    if(index < 3){
+    if(tempInit === 'coffee') {
+      if(index < 6) {
+        index++;
+      } else {index = 0};
+    } else if(index < 3){
       index++;
     } else {index = 0};
   } else {
     if(index > 0){
       index--;
-    } else {index = 3};
+    } else if(tempInit !== 'coffee') 
+      {
+        index = 3
+      } else {index = 6}
   };
   
   image.textContent = '';
@@ -110,7 +116,16 @@ function arrowClick(direction) {
     image.firstChild.style.cssText = 'visibility: visible;  opacity: 100;  width: 90%;  height: auto;';
   }
 
-  //reasign temp values to actual values for correctness
+  if((index > 3) && (tempInit === 'coffee')) {
+    if(screen.width < 520) {
+      image.firstChild.style.cssText = 'height: auto; width: 90%;';
+    } else {
+      image.firstChild.style.cssText = 'height: 90%; width: auto;';
+    }
+  } else if(tempInit === 'coffee') {
+    image.firstChild.style.cssText = 'visibility: visible;  opacity: 100;  width: auto;  height: 90%;';
+  }
+
   if(tempInit === 'ticketHound') {
     ticketHoundImages = imageArray;
     ticketHoundIndex = index;
@@ -129,7 +144,7 @@ function slideshowDisplay() {
   slideshowBox.style.cssText = 'opacity: 100; visibility: visible; width: 90vw; transition: width .4s .4s';
   image.style.cssText = 'opacity: 100; visibility: visible; width: 100%; height: 100%;';
   if(tempInit === 'coffee') {
-    if(coffeeIndex > 1) {
+    if(coffeeIndex > 3) {
       if(screen.width < 520) {
         image.firstChild.style.cssText = 'height: auto; width: 100%;';
       } else {
@@ -187,7 +202,7 @@ document.addEventListener('keyup', e => {
   }
 })
 
-//logic to prevent scrolling while slideshow is open
+//Prevent scrolling while slideshow is open
 function preventDefault(e) {
   e.preventDefault();
 }

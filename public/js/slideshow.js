@@ -110,7 +110,7 @@ function arrowClick(direction) {
     if(screen.width < 520) {
       image.firstChild.style.cssText = 'height: auto; width: 90%;';
     } else {
-      image.firstChild.style.cssText = 'height: 100%; width: auto;';
+      image.firstChild.style.cssText = 'height: 90%; width: auto;';
     }
   } else {
     image.firstChild.style.cssText = 'visibility: visible;  opacity: 100;  width: 90%;  height: auto;';
@@ -120,7 +120,7 @@ function arrowClick(direction) {
     if(screen.width < 520) {
       image.firstChild.style.cssText = 'height: auto; width: 90%;';
     } else {
-      image.firstChild.style.cssText = 'height: 100%; width: auto;';
+      image.firstChild.style.cssText = 'height: 90%; width: auto;';
     }
   } else if(tempInit === 'coffee') {
     image.firstChild.style.cssText = 'visibility: visible;  opacity: 100;  width: 90%;  height: auto;';
@@ -142,22 +142,22 @@ function slideshowDisplay() {
   astronaut2.style.cssText = 'opacity: 0; visibility: hidden;';
   backdrop.style.cssText = 'opacity: 100; visibility: visible;';
   slideshowBox.style.cssText = 'opacity: 100; visibility: visible; width: 90vw; transition: width .4s .4s';
-  image.style.cssText = 'opacity: 100; visibility: visible; width: 100%; height: 100%;';
+  image.style.cssText = 'opacity: 100; visibility: visible; width: 90%; height: 90%;';
   if(tempInit === 'coffee') {
     if(coffeeIndex > 3) {
       if(screen.width < 520) {
-        image.firstChild.style.cssText = 'height: auto; width: 100%;';
+        image.firstChild.style.cssText = 'height: auto; width: 90%;';
       } else {
-        image.firstChild.style.cssText = 'height: 100%; width: auto;';
+        image.firstChild.style.cssText = 'height: 90%; width: auto;';
       }
     }
   }
   if(tempInit === 'iss') {
     if(issIndex > 1) {
       if(screen.width < 520) {
-        image.firstChild.style.cssText = 'height: auto; width: 100%;';
+        image.firstChild.style.cssText = 'height: auto; width: 80%;';
       } else {
-        image.firstChild.style.cssText = 'height: 100%; width: auto;';
+        image.firstChild.style.cssText = 'height: 90%; width: auto;';
       }
     }
   }

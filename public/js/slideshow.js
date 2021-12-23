@@ -120,10 +120,10 @@ function arrowClick(direction) {
     if(screen.width < 520) {
       image.firstChild.style.cssText = 'height: auto; width: 90%;';
     } else {
-      image.firstChild.style.cssText = 'height: 90%; width: auto;';
+      image.firstChild.style.cssText = 'height: 100%; width: auto;';
     }
   } else if(tempInit === 'coffee') {
-    image.firstChild.style.cssText = 'visibility: visible;  opacity: 100;  width: auto;  height: 90%;';
+    image.firstChild.style.cssText = 'visibility: visible;  opacity: 100;  width: 90%;  height: auto;';
   }
 
   if(tempInit === 'ticketHound') {

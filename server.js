@@ -1,8 +1,7 @@
 const express= require('express');
 const app = express();
-const API_KEY = '2787179e050d585834d374729abeb7ac-fb87af35-3d7cadcf';
 const DOMAIN = 'www.dillonkyleportfolio.com';
-const mailgun = require('mailgun-js')({apiKey: API_KEY, domain: DOMAIN});
+const mailgun = require('mailgun-js')({apiKey: process.env.API_KEY, domain: DOMAIN});
 const PORT = process.env.PORT || 3000;
 
 //Middleware
